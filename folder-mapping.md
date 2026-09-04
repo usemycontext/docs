@@ -3,7 +3,7 @@ title: Folder mapping (.umc)
 description: Bind a repo to one of your projects with a .umc file, so a work folder reads your work profile and a side project reads your personal one.
 sidebar:
   label: Folder mapping
-  order: 4
+  order: 5
 ---
 
 In Claude Code and Cursor, a `.umc` file in a repo root binds that folder to one of your projects, so a work repo reads your work profile and a side project reads your personal one:

@@ -15,12 +15,15 @@ files, and a shared context. Docs: https://usemycontext.ai/docs
 | Page | What it covers |
 |---|---|
 | [index.md](./index.md) | Overview: what UseMyContext is, the universal MCP configuration, where to go next |
+| [basics.md](./basics.md) | New to this? MCP, context layers, and why you do not need to be a developer |
 | [getting-started.md](./getting-started.md) | Create an account and make your first connection |
 | [connect.md](./connect.md) | Exact connect steps for Claude, Claude Code, Cursor, ChatGPT, and any MCP client |
-| [tools.md](./tools.md) | The eight MCP tools, what each does, and the scope it requires |
+| [tools.md](./tools.md) | The thirteen MCP tools, what each does, and the scope it requires |
 | [folder-mapping.md](./folder-mapping.md) | Bind a folder to one of your projects with a `.umc` marker |
+| [cli-pull.md](./cli-pull.md) | `npx usemycontext pull`: write your context to a local file any AI tool can read at startup |
 | [security.md](./security.md) | OAuth 2.1 with PKCE, per-tool scopes, audited reads, revocation, the blind surface |
 | [plans.md](./plans.md) | What Free and Premium include, and where Teams fits |
+| [embed.md](./embed.md) | Put your public context card, or the signup widget, on any web page |
 
 ## About this mirror
 
