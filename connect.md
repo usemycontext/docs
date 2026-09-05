@@ -59,7 +59,9 @@ What does not work: the Gemini app's own Settings, then Connectors (or Extension
 
 ### Perplexity
 
-Perplexity has disabled custom MCP connectors for now, so UseMyContext cannot be added there yet. If you would like it available, email [api@perplexity.ai](mailto:api@perplexity.ai) and ask them to support custom MCP connectors.
+Perplexity does take custom remote MCP connectors. Its help centre documents adding one from Account settings, and its changelog puts the feature on the Pro, Max and Enterprise plans, not on Free. On Enterprise an admin decides whether members may add their own remote connectors, and that is off by default.
+
+What we cannot tell you is whether UseMyContext.ai connects there, because we have not tried it. We publish steps for a client only once one of us has walked them end to end on a real account, and nobody here has a paid Perplexity plan yet. So this section carries no steps rather than a guess. If you are on Pro or Max and you try it, tell us and we will write it up.
 
 ## Coding tools
 
