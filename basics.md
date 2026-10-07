@@ -10,7 +10,7 @@ If you are not a developer, you are in the right place. UseMyContext.ai works wi
 
 ## What is MCP?
 
-MCP, [the Model Context Protocol](https://modelcontextprotocol.io/), is an open standard that lets an AI assistant read from a source you choose and approve. Think of it like a standard wall socket: once your assistant supports MCP, it can plug into UseMyContext the same way it plugs into anything else, with no custom wiring. Claude, ChatGPT, Gemini, and Perplexity all speak MCP, so you set your context up once and any of them can read it.
+MCP, [the Model Context Protocol](https://modelcontextprotocol.io/), is an open standard that lets an AI assistant read from a source you choose and approve. Think of it like a standard wall socket: once your assistant supports MCP, it can plug into UseMyContext the same way it plugs into anything else, with no custom wiring. Claude and ChatGPT speak MCP, and so do coding tools like Gemini CLI and Cursor, so you set your context up once and any of them can read it.
 
 You do not install or build anything to use MCP. In your assistant you add a "connector" and paste one web address. That is the whole technical part.
 
@@ -44,7 +44,7 @@ MCP stands for the Model Context Protocol, an open standard for connecting an AI
 
 ### Which AI assistants can read my UseMyContext profile?
 
-Any assistant that [supports MCP](https://modelcontextprotocol.io/clients), including Claude, ChatGPT, Gemini, and Perplexity, plus coding tools like Cursor and VS Code. You connect once and each one reads the same profile.
+Any assistant that [supports MCP](https://modelcontextprotocol.io/clients), including Claude and ChatGPT, plus coding tools like Gemini CLI and Cursor. You connect once and each one reads the same profile.
 
 ### Do I need to know how to code to use UseMyContext?
 

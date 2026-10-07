@@ -1,6 +1,6 @@
 ---
 title: Connect your client
-description: Setup steps for every supported client - Claude, ChatGPT, Gemini, Perplexity, Claude Code, Cursor, VS Code, Codex CLI, Cline, Gemini CLI, Goose, OpenCode, Zed, Orca, Antigravity, Apple Shortcuts, Linear, and any other MCP client - all doors into the same one server.
+description: Setup steps for every supported client - Claude, ChatGPT, Gemini, Claude Code, Cursor, VS Code, Codex CLI, Cline, Gemini CLI, Goose, OpenCode, Zed, Orca, Antigravity, Apple Shortcuts, Linear, and any other MCP client - all doors into the same one server.
 sidebar:
   order: 3
 ---
