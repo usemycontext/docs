@@ -66,7 +66,7 @@ Every client below reaches the same remote MCP server over Streamable HTTP, the 
 | --- | --- | --- |
 | Claude (web and desktop) | Chat app | OAuth 2.1 (PKCE) |
 | ChatGPT (plugin directory) | Chat app | OAuth 2.1 (PKCE) |
-| Gemini | Chat app | OAuth 2.1 (PKCE), token-header fallback |
+| Gemini | Chat app | OAuth 2.1 (PKCE), through Gemini Spark custom apps only (US, 18+, paid tier); not verified by us |
 | Perplexity | Chat app | Custom remote connectors, on Perplexity's paid plans; not verified by us |
 | Claude Code | Coding tool | OAuth 2.1 (PKCE) |
 | Cursor | Coding tool | OAuth 2.1 (PKCE) |

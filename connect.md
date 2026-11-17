@@ -144,7 +144,7 @@ Open `~/.gemini/settings.json` and add UseMyContext under `mcpServers`, using `h
 }
 ```
 
-Start `gemini` and it opens the browser sign-in. If it cannot sign in over OAuth, add `"headers": { "Authorization": "Bearer YOUR_TOKEN" }` with a token from the app's Connect page.
+Start `gemini` and it opens the browser sign-in. If it cannot sign in over OAuth, add `"headers": { "Authorization": "Bearer YOUR_TOKEN" }` with a token you generate on the app's Connect page (under "Advanced - manual setup").
 
 ### Goose
 

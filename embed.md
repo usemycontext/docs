@@ -33,7 +33,7 @@ The card reads your public context at load time, so when you edit your UseMyCont
 
 ### How viewers can pull it over MCP
 
-The embed is a view of the same public context any AI client can read by handle over MCP. A reader who connects a client to the server can ask for your card with the `shared_context` tool and a `handle` argument - so the card on your page and the context an assistant reads are the same public source, addressed by the same @handle.
+The embed is a view of the same public context any signed-in AI client can read by handle over MCP. A reader who connects a client to the server can ask for your card with the `shared_context` tool and a `handle` argument - so the card on your page and the context an assistant reads are the same public source, addressed by the same @handle.
 
 ## Embed the signup widget
 
