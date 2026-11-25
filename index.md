@@ -87,11 +87,11 @@ Per-client setup steps are in [Connect your client](https://usemycontext.ai/docs
 
 ## The thirteen tools at a glance
 
-A connected AI sees exactly thirteen MCP tools. Twelve are reads (including `search` and `fetch`, thin aliases of `search_files` and `get_file` added for ChatGPT deep-research compatibility); the single write tool only files a pending suggestion for you to review. Full reference: [The thirteen tools](https://usemycontext.ai/docs/tools).
+A connected AI sees exactly thirteen MCP tools. Twelve are reads (including `search` and `fetch`, thin aliases of `search_files` and `get_file` added for ChatGPT deep-research compatibility); the single write tool files a pending suggestion for you to review. Your setup answers save to your profile; everything else waits for your approval. Full reference: [The thirteen tools](https://usemycontext.ai/docs/tools).
 
 | Tool | What it does | Access | Scope |
 | --- | --- | --- | --- |
-| `profile` | Reads your compiled profile, built only from facts you accepted. | Read | `profile:read` |
+| `profile` | Reads your compiled profile, built only from facts you gave or accepted. | Read | `profile:read` |
 | `list_profiles` | Lists your own profiles (projects) with each one's name, @handle, and privacy status, and marks which one a connection reads. Metadata only. | Read | `profile:read` |
 | `info` | Explains what UseMyContext is, what a connection can and cannot do, and where to manage your account. Static public information only. | Read | `profile:read` |
 | `account` | Reports your current plan, projects and storage used against your limits, and where to upgrade. Metadata only. | Read | `profile:read` |
@@ -102,7 +102,7 @@ A connected AI sees exactly thirteen MCP tools. Twelve are reads (including `sea
 | `fetch` | The deep-research alias of `get_file` (ChatGPT's fetch result shape). | Read | `files:read` |
 | `ask_docs` | Answers from your documents with cited passages. | Read | `docs:read` |
 | `query_table` | Runs exact counts, sums, filters, and grouped totals over one tabular file. | Read | `docs:read` |
-| `suggest_update` | Files a pending suggestion for you to review. Pending only: it never edits your data. | Write | `updates:write` |
+| `suggest_update` | Files a pending suggestion for you to review. Your setup answers save to your profile; everything else waits for your approval. | Write | `updates:write` |
 | `shared_context` | Reads context others deliberately shared with you. | Read | `shared:read` |
 
 ## Integration guides and common workflows
@@ -110,7 +110,7 @@ A connected AI sees exactly thirteen MCP tools. Twelve are reads (including `sea
 - **Create an account and make my first connection**: [Getting started](https://usemycontext.ai/docs/getting-started) - the account comes free with your first OAuth approval, and a read-only demo account lets you look around first.
 - **Connect a specific client**: [Connect your client](https://usemycontext.ai/docs/connect) - exact steps for Claude (web and desktop), Claude Code, Cursor, ChatGPT (one click from its plugin directory), and any other MCP client.
 - **See what a connected AI can actually do**: [The thirteen tools](https://usemycontext.ai/docs/tools) - every tool, what it does, and the scope it requires.
-- **Point a repo at the right profile**: [Folder mapping (.umc)](https://usemycontext.ai/docs/folder-mapping) - bind a folder to one of your projects in Claude Code or Cursor.
+- **Point a repo at the right profile**: [Folder mapping (.umc)](https://usemycontext.ai/docs/folder-mapping) - bind a folder to one of your projects in Claude Code, Cursor, OpenCode or Gemini CLI.
 - **Feed a tool that reads files, not MCP**: [Session starter (usemycontext pull)](https://usemycontext.ai/docs/cli-pull) - one command writes your context to a local file any AI tool can read at startup.
 - **Evaluate the security model**: [Security](https://usemycontext.ai/docs/security) - OAuth 2.1 with PKCE, per-tool scopes, audited reads, server-enforced revocation, and the structurally blind public surface, written for IT admins.
 - **Understand plans and limits**: [Plans and limits](https://usemycontext.ai/docs/plans) - what Free and Premium include, and where Teams fits.
@@ -128,7 +128,7 @@ UseMyContext runs as a remote Model Context Protocol (MCP) server over Streamabl
 
 ### Which AI clients can connect to UseMyContext?
 
-Claude on the web and desktop, Claude Code, Cursor, ChatGPT (one click from its plugin directory), and any other MCP client that speaks Streamable HTTP. Every client reads the same account and the same profile.
+Claude on the web and desktop, Claude Code, Cursor, Gemini CLI, OpenCode, ChatGPT (one click from its plugin directory), and any other MCP client that speaks Streamable HTTP. Every client reads the same account and the same profile.
 
 ### Do I need a browser extension to use UseMyContext?
 

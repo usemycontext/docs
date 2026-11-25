@@ -6,7 +6,7 @@ sidebar:
   order: 4
 ---
 
-A connected AI sees exactly thirteen tools. Twelve are reads; the single write tool only files a pending suggestion for you to review. Two of the reads, `search` and `fetch`, are thin aliases of `search_files` and `get_file`, added for ChatGPT deep-research compatibility - the same data and permissions, returned in the result shape that surface requires.
+A connected AI sees exactly thirteen tools. Twelve are reads; the single write tool files a pending suggestion for you to review. Your setup answers save to your profile; everything else waits for your approval. Two of the reads, `search` and `fetch`, are thin aliases of `search_files` and `get_file`, added for ChatGPT deep-research compatibility - the same data and permissions, returned in the result shape that surface requires.
 
 | Tool | What it does | When you would use it | Access | Scope |
 | --- | --- | --- | --- | --- |
@@ -21,12 +21,12 @@ A connected AI sees exactly thirteen tools. Twelve are reads; the single write t
 | `fetch` | The deep-research alias of `get_file`: the same full-text read (same audit, same size guard), returned in the id/title/text shape ChatGPT deep research requires. | ChatGPT pulls a full document into a deep-research run. | Read | `files:read` |
 | `ask_docs` | Answers from your documents with cited passages. | "What did we promise the client in March?" - answered with the exact passage. | Read | `docs:read` |
 | `query_table` | Runs exact, deterministic counts, sums, filters, and grouped totals over one tabular file. | "How much did I invoice in Q2?" - counted from the rows, never estimated. | Read | `docs:read` |
-| `suggest_update` | Files a pending suggestion for you to review in the app. Pending only: it never edits your profile or files directly. | Mention you changed roles once. Approve it once. Every AI knows. | Write | `updates:write` |
+| `suggest_update` | Files a pending suggestion for you to review in the app. Your setup answers save to your profile; everything else waits for your approval. It never touches your files. | Mention you changed roles once. Approve it once. Every AI knows. | Write | `updates:write` |
 | `shared_context` | Reads context others deliberately shared with you: a share, a public or network @handle, or a teammate on an active team plan. | "Brief me on Ana before our call" - from what she chose to share. | Read | `shared:read` |
 
 ## When a connected AI reaches for a tool on its own
 
-The server does not only tell a connected AI what each tool does, it tells it when to reach for one unprompted, and every client that reads the live tool list gets that guidance with no configuration from you. Two triggers close the loop around a conversation. At the start: when a question touches you personally - your background, work, history, projects, or documents - it is told to check `profile` and `ask_docs` before saying it does not know or guessing, so you should not have to name UseMyContext for your own context to be used. At the end: when a conversation has surfaced something new and durable about you and is wrapping up (you say thanks or goodbye, or the task completes), it is told to offer to save that with `suggest_update` before the context is lost. A save is a pending suggestion you review and accept on your Profile page, and nothing is ever written to your files.
+The server does not only tell a connected AI what each tool does, it tells it when to reach for one unprompted, and every client that reads the live tool list gets that guidance with no configuration from you. Two triggers close the loop around a conversation. At the start: when a question touches you personally - your background, work, history, projects, or documents - it is told to check `profile` and `ask_docs` before saying it does not know or guessing, so you should not have to name UseMyContext for your own context to be used. At the end: when a conversation has surfaced something new and durable about you and is wrapping up (you say thanks or goodbye, or the task completes), it is told to offer to save that with `suggest_update` before the context is lost. A save is a pending suggestion you review and accept on your Profile page (only your answers to the first-run setup questions save straight to your profile), and nothing is ever written to your files.
 
 This is guidance we give the client, not a promise about what it does with it: how closely an AI follows either trigger is up to that client, and some need a nudge. ChatGPT is the clearest case - an untagged message answers from ChatGPT's own memory, so tag `@UseMyContext` in each message that should use your context. The per-client habits are in [Connect your client](https://usemycontext.ai/docs/connect).
 

@@ -1,7 +1,7 @@
 # UseMyContext documentation
 
-This repository mirrors the documentation for [UseMyContext](https://usemycontext.ai), the
-personal context layer for AI. The rendered, canonical docs live at
+This repository mirrors the documentation for [UseMyContext](https://usemycontext.ai): one context,
+every AI app. The rendered, canonical docs live at
 **[usemycontext.ai/docs](https://usemycontext.ai/docs)** - read them there for the best
 experience (sidebar navigation, working cross-links, search engines and AI crawlers are
 pointed there too).
@@ -22,7 +22,7 @@ files, and a shared context. Docs: https://usemycontext.ai/docs
 | [folder-mapping.md](./folder-mapping.md) | Bind a folder to one of your projects with a `.umc` marker |
 | [cli-pull.md](./cli-pull.md) | `npx usemycontext pull`: write your context to a local file any AI tool can read at startup |
 | [security.md](./security.md) | OAuth 2.1 with PKCE, per-tool scopes, audited reads, revocation, the blind surface |
-| [plans.md](./plans.md) | What Free and Premium include, and where Teams fits |
+| [plans.md](./plans.md) | What Free, Premium and Team include |
 | [embed.md](./embed.md) | Put your public context card, or the signup widget, on any web page |
 
 ## About this mirror
@@ -31,7 +31,9 @@ The markdown source of truth lives in the UseMyContext monorepo and is rendered 
 `usemycontext.ai/docs` at build time. In these mirror copies, the site's root-relative
 cross-page links have been rewritten to full `https://usemycontext.ai/docs/...` URLs so
 they resolve when read on GitHub. The frontmatter at the top of each file drives the
-rendered site's sidebar and can be ignored here.
+rendered site's sidebar and can be ignored here. The sign-up form on
+`getting-started.md` only renders on the site, so on GitHub use
+[usemycontext.ai/docs/getting-started](https://usemycontext.ai/docs/getting-started) to create an account.
 
 ## License
 

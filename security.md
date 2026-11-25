@@ -1,6 +1,6 @@
 ---
 title: Security
-description: The security model for IT admins - OAuth 2.1 with PKCE and dynamic client registration, per-tool scopes with audience binding, audited reads, proposal-only writes, server-enforced revocation, structural blindness, EU residency, and self-serve account deletion.
+description: The security model for IT admins - OAuth 2.1 with PKCE and dynamic client registration, per-tool scopes with audience binding, audited reads, one bounded write path, server-enforced revocation, structural blindness, EU residency, and self-serve account deletion.
 sidebar:
   order: 7
 ---
@@ -10,7 +10,7 @@ For IT admins evaluating a connection:
 - Authentication is [OAuth 2.1](https://datatracker.ietf.org/doc/draft-ietf-oauth-v2-1/) with [PKCE](https://datatracker.ietf.org/doc/html/rfc7636) and [dynamic client registration](https://datatracker.ietf.org/doc/html/rfc7591). Approval happens in the user's browser; no API key or token is pasted or written to a file.
 - Tokens carry per-tool scopes (`profile:read`, `files:read`, `docs:read`, `updates:write`, `shared:read`) and support audience binding ([RFC 8707](https://datatracker.ietf.org/doc/html/rfc8707) resource indicators).
 - Every access an AI makes leaves a record in the user's audit trail.
-- The single write tool is proposal-only: it files a pending suggestion the user reviews in the app. Nothing an AI does edits the user's profile or files directly.
+- The single write tool files a pending suggestion the user reviews in the app. The one exception is the first-run setup interview: on an empty, private profile with no shares, the user's own answers save straight to their profile - at most five short answers, within 30 minutes, from one AI app - and every one shows in the audit trail under that app's name and can be edited or deleted. Everything else waits for approval, and nothing an AI does ever touches the user's files.
 - Access is revocable from the Connect page: one app at a time for an app you connected by signing in, or everything at once. Revocation is enforced on the server: the token stops working immediately, everywhere. A token you pasted into a tool by hand ends when you sign out of the browser you made it in, or when you disconnect everything.
 - The public-facing surface is structurally blind: it declares no data bindings, so it holds no readable user content, which lives on an isolated per-user data plane behind it.
 - For EU users, the profile store (profile, facts, learnings, audit, compiled context), the handle registry and their backups are pinned to EU jurisdiction. Uploaded file bytes and the search index are not region-pinned today.
