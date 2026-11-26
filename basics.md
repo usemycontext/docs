@@ -52,4 +52,4 @@ No. You sign in with an email code, write or upload what you want your AI to kno
 
 ### Is it safe to connect my AI to UseMyContext?
 
-Yes. You approve everything that goes in, after your first setup answers. Access is granted per tool, reads are audited, and you can revoke any connection in one click. UseMyContext is also built so its public surface cannot read your data.
+Yes. You approve everything that goes in, after your first setup answers. Access is granted per tool, reads are audited, and with one click you can revoke any app you connected by signing in; a token you pasted by hand ends when you sign out of the browser that made it, or when you use Disconnect everything. UseMyContext is also built so its public surface cannot read your data.

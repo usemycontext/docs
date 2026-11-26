@@ -92,7 +92,7 @@ Prefer to add it by hand? Add the server to your `mcp.json` (a remote server nee
 }
 ```
 
-The [cursor-plugin](https://github.com/usemycontext/cursor-plugin) packages the same server with folder mapping for Cursor's plugin marketplace (submitted, not listed yet).
+Our Cursor plugin, which adds the `/umc` skill and [folder mapping](https://usemycontext.ai/docs/folder-mapping), is coming: it is not in Cursor's marketplace yet, so the server above is the way to connect today.
 
 ### VS Code
 
