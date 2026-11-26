@@ -2,7 +2,7 @@
 title: Connect your client
 description: Setup steps for every supported client - Claude, ChatGPT, Gemini, Claude Code, Cursor, VS Code, Codex CLI, Cline, Gemini CLI, Goose, OpenCode, Zed, Orca, Antigravity, Apple Shortcuts, Linear, and any other MCP client - all doors into the same one server.
 sidebar:
-  order: 3
+  order: 4
 ---
 
 You are on step 3 of three: **sign in**, **add context**, **connect**. If you have not done the first two, start at [Getting started](https://usemycontext.ai/docs/getting-started).
@@ -134,7 +134,15 @@ In Cline, open the MCP Servers icon, then Remote Servers, then Edit Configuratio
 
 ### Gemini CLI
 
-Open `~/.gemini/settings.json` and add UseMyContext under `mcpServers`, using `httpUrl` for a remote Streamable HTTP server:
+The quickest path is our open-source extension, installed with one command:
+
+```
+gemini extensions install https://github.com/usemycontext/gemini-cli-extension
+```
+
+Start `gemini`, and the first UseMyContext tool call opens the browser sign-in. The extension also tells Gemini to use your [folder mapping](https://usemycontext.ai/docs/folder-mapping). Details: [gemini-cli-extension](https://github.com/usemycontext/gemini-cli-extension).
+
+Prefer the plain server without the extension? Open `~/.gemini/settings.json` and add UseMyContext under `mcpServers`, using `httpUrl` for a remote Streamable HTTP server:
 
 ```json
 {
@@ -167,6 +175,13 @@ Open `opencode.json` (or `opencode.jsonc`) and add UseMyContext under the `mcp` 
 ```
 
 No client ID to paste: OpenCode sees our 401, finds our authorization server and registers itself over RFC 7591 dynamic client registration. The empty `oauth` block only makes that explicit, since OAuth auto-detection is already on by default (set `"oauth": false` to turn it off and use a header instead). Start OpenCode and it opens the browser sign-in; if it does not, run `opencode mcp auth usemycontext` to force it.
+
+That block alone is the plain server, and it is all you need to connect. Our open-source [OpenCode plugin](https://github.com/usemycontext/opencode-plugin) adds two optional pieces on top:
+
+1. **The instructions.** Copy its `rules/usemycontext.md` into your repo (for example to `.opencode/usemycontext.md`) and list it in `opencode.json`: `{ "instructions": [".opencode/usemycontext.md"] }`. In the global `~/.config/opencode/opencode.json`, use the absolute path to your own copy instead. They tell OpenCode when to check your context and to use your [folder mapping](https://usemycontext.ai/docs/folder-mapping).
+2. **The plugin file.** Copy its `index.js` into `.opencode/plugins/` (one project) or `~/.config/opencode/plugins/` (all of them). It reads a folder's `.umc` file and points each call at the mapped project for you.
+
+The plugin is not on npm yet, so copy the file rather than naming it in the `plugin` list. Full steps: [opencode-plugin](https://github.com/usemycontext/opencode-plugin).
 
 ### Zed
 

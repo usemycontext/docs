@@ -1,6 +1,6 @@
 ---
 title: Documentation
-description: How to connect any AI client to UseMyContext over MCP, what the thirteen tools do, folder mapping with .umc, the session-starter CLI, the security model, and plans and limits.
+description: How to add your context and connect any AI client to UseMyContext over MCP, what the thirteen tools do, folder mapping with .umc, the session-starter CLI, the security model, and plans and limits.
 sidebar:
   label: Overview
 ---
@@ -30,7 +30,7 @@ Same question, same person, one connection apart.
 ### Three steps, once
 
 1. **Sign in.** Email and a one-time code. No password, no API key.
-2. **Add context.** Write or upload what your AI should know, and approve it.
+2. **Add context.** Write or upload what your AI should know, and approve it. How: [Add your context](https://usemycontext.ai/docs/add-context).
 3. **Connect.** One click in [Claude's directory](https://claude.ai/directory/connectors/usemycontext) or [ChatGPT's plugin directory](https://chatgpt.com/plugins/plugin_asdk_app_6a62cbc0ff488191890ba6370456e73e). One paste anywhere else.
 
 The whole service is one remote MCP server over Streamable HTTP (the transport also described as [Server-Sent Events](https://html.spec.whatwg.org/multipage/server-sent-events.html), or SSE, and HTTP POST):
@@ -108,9 +108,10 @@ A connected AI sees exactly thirteen MCP tools. Twelve are reads (including `sea
 ## Integration guides and common workflows
 
 - **Create an account and make my first connection**: [Getting started](https://usemycontext.ai/docs/getting-started) - the account comes free with your first OAuth approval, and a read-only demo account lets you look around first.
+- **Put what your AI should know into it**: [Add your context](https://usemycontext.ai/docs/add-context) - facts, a short interview, files, calendars, copied-in storage, projects, and who can see each one.
 - **Connect a specific client**: [Connect your client](https://usemycontext.ai/docs/connect) - exact steps for Claude (web and desktop), Claude Code, Cursor, ChatGPT (one click from its plugin directory), and any other MCP client.
 - **See what a connected AI can actually do**: [The thirteen tools](https://usemycontext.ai/docs/tools) - every tool, what it does, and the scope it requires.
-- **Point a repo at the right profile**: [Folder mapping (.umc)](https://usemycontext.ai/docs/folder-mapping) - bind a folder to one of your projects in Claude Code, Cursor, OpenCode or Gemini CLI.
+- **Point a repo at the right profile**: [Folder mapping (.umc)](https://usemycontext.ai/docs/folder-mapping) - bind a folder to one of your projects, in coding tools with our plugin installed.
 - **Feed a tool that reads files, not MCP**: [Session starter (usemycontext pull)](https://usemycontext.ai/docs/cli-pull) - one command writes your context to a local file any AI tool can read at startup.
 - **Evaluate the security model**: [Security](https://usemycontext.ai/docs/security) - OAuth 2.1 with PKCE, per-tool scopes, audited reads, server-enforced revocation, and the structurally blind public surface, written for IT admins.
 - **Understand plans and limits**: [Plans and limits](https://usemycontext.ai/docs/plans) - what Free and Premium include, and where Teams fits.

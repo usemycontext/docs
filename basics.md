@@ -30,7 +30,7 @@ The developer-flavored parts of these docs (config files, command lines) are opt
 
 ## What can a connected AI actually see?
 
-Only what you put in and approved. Nothing is shared until you say so, access is granted tool by tool, and you can switch any connection off whenever you like. The full list of what an assistant can do is on [The thirteen tools](https://usemycontext.ai/docs/tools), and the safeguards are on [Security](https://usemycontext.ai/docs/security).
+Only what you put in. You approve everything that goes in, after your first setup answers. Nothing is shared until you say so, access is granted tool by tool, and you can switch any connection off whenever you like. The full list of what an assistant can do is on [The thirteen tools](https://usemycontext.ai/docs/tools), and the safeguards are on [Security](https://usemycontext.ai/docs/security).
 
 ## How do I start?
 
@@ -52,4 +52,4 @@ No. You sign in with an email code, write or upload what you want your AI to kno
 
 ### Is it safe to connect my AI to UseMyContext?
 
-Yes. You approve everything that goes in, access is granted per tool, reads are audited, and you can revoke any connection in one click. UseMyContext is also built so its public surface cannot read your data.
+Yes. You approve everything that goes in, after your first setup answers. Access is granted per tool, reads are audited, and you can revoke any connection in one click. UseMyContext is also built so its public surface cannot read your data.

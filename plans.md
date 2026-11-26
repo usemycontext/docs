@@ -2,7 +2,7 @@
 title: Plans and limits
 description: What the Free and Premium plans include - projects and storage per plan - and where Teams fits, with a link to current pricing.
 sidebar:
-  order: 8
+  order: 9
 ---
 
 | Plan | Projects | Storage | Price |

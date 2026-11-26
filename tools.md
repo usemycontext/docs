@@ -3,7 +3,7 @@ title: The thirteen tools
 description: The full reference for the thirteen MCP tools a connected AI can call - what each does, whether it reads or writes, and the OAuth scope it requires.
 sidebar:
   label: Tools
-  order: 4
+  order: 5
 ---
 
 A connected AI sees exactly thirteen tools. Twelve are reads; the single write tool files a pending suggestion for you to review. Your setup answers save to your profile; everything else waits for your approval. Two of the reads, `search` and `fetch`, are thin aliases of `search_files` and `get_file`, added for ChatGPT deep-research compatibility - the same data and permissions, returned in the result shape that surface requires.

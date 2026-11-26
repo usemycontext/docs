@@ -2,12 +2,12 @@
 title: Security
 description: The security model for IT admins - OAuth 2.1 with PKCE and dynamic client registration, per-tool scopes with audience binding, audited reads, one bounded write path, server-enforced revocation, structural blindness, EU residency, and self-serve account deletion.
 sidebar:
-  order: 7
+  order: 8
 ---
 
 For IT admins evaluating a connection:
 
-- Authentication is [OAuth 2.1](https://datatracker.ietf.org/doc/draft-ietf-oauth-v2-1/) with [PKCE](https://datatracker.ietf.org/doc/html/rfc7636) and [dynamic client registration](https://datatracker.ietf.org/doc/html/rfc7591). Approval happens in the user's browser; no API key or token is pasted or written to a file.
+- Authentication is [OAuth 2.1](https://datatracker.ietf.org/doc/draft-ietf-oauth-v2-1/) with [PKCE](https://datatracker.ietf.org/doc/html/rfc7636) and [dynamic client registration](https://datatracker.ietf.org/doc/html/rfc7591). When you connect by signing in, approval happens in your browser and no token is pasted or saved. A few tools that can't sign in use a token you generate on the Connect page; the pull command keeps it in a file on your computer.
 - Tokens carry per-tool scopes (`profile:read`, `files:read`, `docs:read`, `updates:write`, `shared:read`) and support audience binding ([RFC 8707](https://datatracker.ietf.org/doc/html/rfc8707) resource indicators).
 - Every access an AI makes leaves a record in the user's audit trail.
 - The single write tool files a pending suggestion the user reviews in the app. The one exception is the first-run setup interview: on an empty, private profile with no shares, the user's own answers save straight to their profile - at most five short answers, within 30 minutes, from one AI app - and every one shows in the audit trail under that app's name and can be edited or deleted. Everything else waits for approval, and nothing an AI does ever touches the user's files.

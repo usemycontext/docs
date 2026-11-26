@@ -2,7 +2,7 @@
 title: Embed
 description: Put your public UseMyContext.ai card on any website, or drop the signup widget on your own site, with a two-line snippet and no tracking.
 sidebar:
-  order: 9
+  order: 10
 ---
 
 UseMyContext.ai gives you two things you can embed on a web page: your own public context card, and the signup widget. Both load from a single small script and need no build step, no account key, and no cookies on the reader's side.

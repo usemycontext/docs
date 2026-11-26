@@ -3,7 +3,7 @@ title: Session starter (usemycontext pull)
 description: One command writes your curated context to a local file, so AI tools that read files at startup - Claude Code, agent frameworks, your own scripts - begin every session already knowing you.
 sidebar:
   label: Session starter
-  order: 6
+  order: 7
 ---
 
 Not every AI tool speaks MCP. Plenty of them just read a file when they start up. For those, one command writes your curated context to disk:
@@ -17,7 +17,7 @@ Re-running overwrites the file, so it stays fresh. Nothing to install and nothin
 
 ## Get your token first
 
-The CLI needs an access token, which you generate on the Connect page inside the app, under "Advanced - manual setup". Give it to the CLI either way:
+The CLI needs an access token, which you generate on the Connect page inside the app: open "Advanced - manual setup" and press "Generate a token". Give it to the CLI either way:
 
 ```bash
 export UMC_TOKEN=<your token>
@@ -30,6 +30,14 @@ token=<your token>
 ```
 
 The token is deliberately never accepted as a command-line flag, because flags land in your shell history, and the CLI never writes it anywhere itself. Read [Handling your token](#handling-your-token) below before you park it in a file.
+
+### Your token is tied to the browser that made it
+
+A token you generate on the Connect page belongs to the browser sign-in you made it from. It stops working when you sign out of that browser, or when you use "Disconnect everything" on the Connect page. Otherwise it works for up to a year.
+
+When it stops working, the pull fails with one plain line saying the token was not accepted, and writes nothing. A session-start hook then quietly starts without fresh context: the Claude Code variant below that prints the file gets none, and a file from an earlier pull stays as it was and goes out of date.
+
+To fix it, sign in at [usemycontext.ai](https://usemycontext.ai), generate a new token on the Connect page (under "Advanced - manual setup"), and put it in `UMC_TOKEN` or `~/.usemycontext` in place of the old one.
 
 ## What lands in the file
 
@@ -73,7 +81,7 @@ Prefer the context handed straight to the session instead of read from disk? A S
 npx -y usemycontext pull && cat UMC-CONTEXT.md
 ```
 
-Set `UMC_TOKEN` in your shell profile (or use `~/.usemycontext`) so the hook can find it. If the token is missing or expired the hook prints one plain line and the session simply starts without your context. Nothing breaks.
+Set `UMC_TOKEN` in your shell profile (or use `~/.usemycontext`) so the hook can find it. If the token is missing or no longer works the hook prints one plain line and the session simply starts without fresh context. Nothing breaks. See [Your token is tied to the browser that made it](#your-token-is-tied-to-the-browser-that-made-it) for how to get a new one.
 
 ## Recipe: agent frameworks that read a bootstrap file
 
@@ -96,10 +104,10 @@ Re-run the pull whenever you want that copy refreshed. A cron line or the agent'
 
 Your access token is a credential. Treat it like a password:
 
-- **It is long-lived** (a year), so a leak is not self-limiting the way an expiring key would be. This is the one thing worth slowing down for.
+- **It is long-lived** (up to a year), so a leak is not self-limiting the way an expiring key would be. This is the one thing worth slowing down for. It ends sooner if you sign out of the browser you generated it in.
 - **If you keep it in `~/.usemycontext`, restrict the file**: `chmod 600 ~/.usemycontext` so only your own account can read it. A dotfile in your home directory is readable by anything running as you, and by anyone who ends up with a copy of your disk or your backups.
 - **Never commit it.** Not in a repo, not in a shared dotfiles repository, not in a container image. Prefer `UMC_TOKEN` in your shell profile or your machine's own secret store.
-- **If it leaks, revoke it.** Open the Connect page at [usemycontext.ai](https://usemycontext.ai) and use "Disconnect everything". Revocation is enforced on the server, so every token dies immediately, everywhere. You then reconnect your clients and generate a fresh token.
+- **If it leaks, revoke it.** Sign out of the browser you generated it in, or open the Connect page at [usemycontext.ai](https://usemycontext.ai) and use "Disconnect everything", which ends every token at once. Revocation is enforced on the server, so the token dies immediately, everywhere. After Disconnect everything you reconnect your clients; either way, generate a new token for the CLI.
 
 The CLI only ever reads. It cannot change your profile, your facts, or your files, and there is no command that writes back.
 

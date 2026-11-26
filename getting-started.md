@@ -8,10 +8,10 @@ sidebar:
 ## Three steps, once
 
 1. **Sign in.** Email and a one-time code. No password, no API key.
-2. **Add context.** Write or upload what your AI should know, and approve it.
+2. **Add context.** Write or upload what your AI should know, and approve it. How: [Add your context](https://usemycontext.ai/docs/add-context).
 3. **Connect.** One click in [Claude's directory](https://claude.ai/directory/connectors/usemycontext) or [ChatGPT's plugin directory](https://chatgpt.com/plugins/plugin_asdk_app_6a62cbc0ff488191890ba6370456e73e). One paste anywhere else.
 
-The rest of this page is step 1 and step 3 in detail.
+The rest of this page is step 1 and step 3 in detail. Step 2 has its own page: [Add your context](https://usemycontext.ai/docs/add-context).
 
 ## Create your account
 
