@@ -1,7 +1,7 @@
 # UseMyContext documentation
 
-This repository mirrors the documentation for [UseMyContext](https://usemycontext.ai): one context,
-every AI app. The rendered, canonical docs live at
+This repository mirrors the documentation for [UseMyContext](https://usemycontext.ai): own your context,
+for every AI app. The rendered, canonical docs live at
 **[usemycontext.ai/docs](https://usemycontext.ai/docs)** - read them there for the best
 experience (sidebar navigation, working cross-links, search engines and AI crawlers are
 pointed there too).
